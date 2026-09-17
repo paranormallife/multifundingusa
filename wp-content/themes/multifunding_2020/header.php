@@ -18,7 +18,10 @@
 <meta property="og:url" content="<?php echo 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>"/>
 
 <?php 
-  $featured_image = get_the_post_thumbnail_url( $post->ID, 'full' );
+  $post_id = get_queried_object_id();
+  $featured_image = $post_id
+    ? get_the_post_thumbnail_url($post_id, 'full')
+    : '';
   if( is_front_page() or is_home() ) {
     echo '<meta property="og:image" content="'.get_site_icon_url().'"/>';
   } elseif ( $featured_image !='' ) { 
@@ -34,7 +37,7 @@
   if( is_front_page() or is_home() ) {
     echo '<meta name="description" content="' . get_bloginfo('description') . '">';
   } else {
-    $summary = get_the_excerpt( $post->ID );
+    $summary = $post_id ? get_the_excerpt($post_id) : '';
     if ( $summary !='' ) {
       echo '<meta name="description" content="' . $summary . '">';
     } else {
