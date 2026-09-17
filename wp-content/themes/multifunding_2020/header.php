@@ -90,7 +90,17 @@ if ( is_front_page() or ( is_home() ) ) {
 <?php /* This should always be included just before the </head> tag. */ wp_head(); ?>
 </head>
 
-<body id="body" class="asw <?php if(is_home() or is_front_page()) { echo 'home '; } else { echo get_post_type(); echo ' '; echo $post->post_name; } ?>">
+<body id="body" class="asw <?php
+if (is_home() || is_front_page()) {
+    echo 'home';
+} else {
+    echo esc_attr(get_post_type($post_id));
+
+    if ($post_id) {
+        echo ' ' . esc_attr(get_post_field('post_name', $post_id));
+    }
+}
+?>">
 
 <header>
   <?php get_template_part('snippets/header_nav') ?>
