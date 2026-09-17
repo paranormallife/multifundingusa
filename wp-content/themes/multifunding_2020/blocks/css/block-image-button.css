@@ -1,0 +1,56 @@
+:root {
+    --blue: #9ADBFF;
+    --green: #94D883;
+}
+
+.image-block {
+    background-color: var(--blue);
+    margin-bottom: 1rem;
+    min-height: 100%;
+}
+
+.image-block.green {
+    background-color: var(--green);
+}
+
+.image-block.black {
+    background-color: black);
+}
+
+.image-block .image {
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.image-block a {
+    color: black;
+    display: block;
+    text-align: center;
+}
+
+.image-block a:hover {
+    opacity: 0.85;
+}
+
+.image-block .title h2 {
+    border-top: 2px solid white;
+    background-color: var(--blue);
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+}
+
+.image-block.green .title h2 {
+    background-color: var(--green);
+}
+
+.image-block.black a .title h2 {
+    background-color: black;
+    color: white;
+}

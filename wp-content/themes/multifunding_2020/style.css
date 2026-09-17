@@ -1,0 +1,62 @@
+/*
+Theme Name: Multi Funding 2020
+Theme URI:
+Author: Elliot Toman
+Author URI: https://www.asubtleweb.com
+Description: Custom theme for Multi Funding by A Subtle Web
+Version: 1.0
+License: 
+License URI: 
+Tags: 
+Text Domain: 
+*/
+
+@import url('assets/css/fonts.css?v=20230601');
+@import url('assets/css/base.css?v=20230601');
+@import url('assets/css/tablet.css?v=20230601');
+
+:root {
+    --primary: #01273E;
+    --secondary: #093048;
+    --dark: #25435E;
+    --medium: #5F799C;
+    --light: #B9DAF3;
+    --heading: 'Rubik';
+    --body: 'Lato';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.asw .has-white-color { color: white; }
+.asw .has-white-background-color { background-color: white; }
+.asw .has-black-color { color: black; }
+.asw .has-black-background-color { background-color: black; }
+
+.asw .wp-block-columns {
+    margin-bottom: 0;
+}
+
+@media screen and ( max-width: 781px ) {
+    .asw .wp-block-columns {
+        display: block;
+    }
+}
+
+@media screen and ( min-width: 600px ) and ( max-width: 781px ) {
+    .asw .wp-block-column:nth-child(2n) {
+        margin-left: 0;
+    }
+}
+
+
+

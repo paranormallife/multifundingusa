@@ -1,0 +1,131 @@
+<div class="form funding-request">
+    <h2>Part 1: Client Info</h2>
+    <br/>
+    <h3>Client Name *</h3>
+    <div class="quarters">
+     <div>[text* first-name]<label>First</label></div>
+     <div>[text middle-name]<label>Middle</label></div>
+     <div>[text* last-name]<label>Last</label></div>
+     <div>[text suffix]<label>Suffix</label></div>
+    </div>
+    <br/>
+    <h3>Client Address *</h3>
+    [text* street-address]<label>Street Address</label>
+    [text address-line-2]<label>Address Line 2</label>
+    <div class="halves">
+     <div>[text* city]<label>City</label></div>
+     <div>[text* state]<label>State / Province / Region</label></div>
+     <div>[text* zip]<label>ZIP / Postal Code</label></div>
+     <div>[select* country default:187 "Afghanistan" "Albania" "Algeria" "Andorra" "Angola" "Antigua & Deps" "Argentina" "Armenia" "Australia" "Austria" "Azerbaijan" "Bahamas" "Bahrain" "Bangladesh" "Barbados" "Belarus" "Belgium" "Belize" "Benin" "Bhutan" "Bolivia" "Bosnia Herzegovina" "Botswana" "Brazil" "Brunei" "Bulgaria" "Burkina" "Burundi" "Cambodia" "Cameroon" "Canada" "Cape Verde" "Central African Rep" "Chad" "Chile" "China" "Colombia" "Comoros" "Congo" "Congo (Democratic Rep)" "Costa Rica" "Croatia" "Cuba" "Cyprus" "Czech Republic" "Denmark" "Djibouti" "Dominica" "Dominican Republic" "East Timor" "Ecuador" "Egypt" "El Salvador" "Equatorial Guinea" "Eritrea" "Estonia" "Ethiopia" "Fiji" "Finland" "France" "Gabon" "Gambia" "Georgia" "Germany" "Ghana" "Greece" "Grenada" "Guatemala" "Guinea" "Guinea-Bissau" "Guyana" "Haiti" "Honduras" "Hungary" "Iceland" "India" "Indonesia" "Iran" "Iraq" "Ireland (Republic)" "Israel" "Italy" "Ivory Coast" "Jamaica" "Japan" "Jordan" "Kazakhstan" "Kenya" "Kiribati" "Korea North" "Korea South" "Kosovo" "Kuwait" "Kyrgyzstan" "Laos" "Latvia" "Lebanon" "Lesotho" "Liberia" "Libya" "Liechtenstein" "Lithuania" "Luxembourg" "Macedonia" "Madagascar" "Malawi" "Malaysia" "Maldives" "Mali" "Malta" "Marshall Islands" "Mauritania" "Mauritius" "Mexico" "Micronesia" "Moldova" "Monaco" "Mongolia" "Montenegro" "Morocco" "Mozambique" "Myanmar, (Burma)" "Namibia" "Nauru" "Nepal" "Netherlands" "New Zealand" "Nicaragua" "Niger" "Nigeria" "Norway" "Oman" "Pakistan" "Palau" "Panama" "Papua New Guinea" "Paraguay" "Peru" "Philippines" "Poland" "Portugal" "Qatar" "Romania" "Russian Federation" "Rwanda" "St Kitts & Nevis" "St Lucia" "Saint Vincent & the Grenadines" "Samoa" "San Marino" "Sao Tome & Principe" "Saudi Arabia" "Senegal" "Serbia" "Seychelles" "Sierra Leone" "Singapore" "Slovakia" "Slovenia" "Solomon Islands" "Somalia" "South Africa" "South Sudan" "Spain" "Sri Lanka" "Sudan" "Suriname" "Swaziland" "Sweden" "Switzerland" "Syria" "Taiwan" "Tajikistan" "Tanzania" "Thailand" "Togo" "Tonga" "Trinidad & Tobago" "Tunisia" "Turkey" "Turkmenistan" "Tuvalu" "Uganda" "Ukraine" "United Arab Emirates" "United Kingdom" "United States" "Uruguay" "Uzbekistan" "Vanuatu" "Vatican City" "Venezuela" "Vietnam" "Yemen" "Zambia" "Zimbabwe"]<label>Country</label></div>
+    </div>
+    <h3>Client Phone *</h3>
+    [text* client-phone]
+    <h3>Client Email</h3>
+    [email client-email]
+    <div class="halves">
+     <div>
+      <h3>Client SSN</h3>
+      [email client-ssn]
+     </div>
+     <div>
+      <h3>Client DOB</h3>
+      [date client-dob]
+     </div>
+    </div>
+    <h3>Pending Child or Spousal Support</h3>
+    <div class="inline-select">
+     [radio child-spousal-support use_label_element "Yes" "No"]
+    </div>
+    [group pending-support]
+     <div><h3>Please provide more information</h3>[text support-information]</div>
+     <div><h3>Requested Funding Amount*</h3>[text* requested-funding-amount]</div>
+     <div><h3>Additional Notes</h3>[textarea pending-support-notes]</div>
+    [/group]
+    <br/>
+
+    <!-- ATTORNEY INFO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    
+    <h2>Part 2: Attorney Info</h2>
+    <h3>Law Firm *</h3>
+    [text* law-firm]
+    <h3>Attorney Name * </h3>
+    [text* attorney-name]
+    <h3>Attorney Email *</h3>
+    [email* attorney-email]
+    <h3>Paralegal Name </h3>
+    [text paralegal-name]
+    <h3>Paralegal Email </h3>
+    [email paralegal-email]
+    <h3>Have you used Multi Funding before? *</h3>
+    <div class="inline-select">
+     [radio used-before use_label_element "Yes" "No"]
+    </div>
+    <h3>How did you hear about Multi Funding? *</h3>
+    <div class="stacked-select">
+     [radio referral use_label_element "Online Search" "Postcard" "Brochure" "Directed by a Multi Funding Representative" "Referred" "Other"]
+    </div>
+    [group referral-other]<div>[text other-referral-source]<label>Other: Please Specify</label></div>[/group]
+    [group attorney-details]
+     <h3>Attorney Address *</h3>
+     <div>[text* attorney-address]<label>Street Address</label></div>
+     <div>[text attorney-address-2]<label>Address Line 2</label></div>
+     <div class="thirds">
+      <div>[text* attorney-city]<label>City</label></div>
+      <div>[text* attorney-state]<label>State/Province/Region</label></div>
+      <div>[text* attorney-zip]<label>ZIP/Postal Code</label></div>
+     </div>
+     <div class="thirds">
+      <div>[text* attorney-country]<label>Country</label></div>
+      <div><h3>Attorney Phone *</h3>[text* attorney-phone]</div>
+      <div><h3>Attorney Fax</h3>[text attorney-fax]</div>
+     </div>
+    [/group]
+    <br/>
+
+    <!-- CASE INFO ~~~~~~~~~~~~~~~~~ -->
+    
+    <h2>Part 3: Case Info</h2>
+    <div class="halves">
+     <div>
+      <h3>Case Type *</h3>
+      [select* case-type "" "Motor Vehicle Accident" "Labor Law/Worker's Compensation" "Maritime" "Medical Malpractice" "Slip and Fall" "Assault" "Mass Tort" "Police" "Other"]
+     </div>
+     <div>
+    [group group_mva-roles]<h3>Driver, Passenger, Pedestrian, Other *</h3>
+    [select*  client-role "" "Driver" "Passenger" "Pedestrian" "Other"][/group]
+     </div>
+    </div>
+    [group group_date-of-incident]<h3>Date of Incident *</h3>[date date-of-incident][/group]
+    [group group_theory-of-liability]<h3>Theory of Liability *</h3>[text* theory-of-liability][/group]
+    [group group_departure-from-standard-care]<h3>Departure from Standard Care *</h3>[text* departure-from-standard-care][/group]
+    [group group_insurance-carrier]<h3>Insurance Carrier *</h3>[text* insurance-carrier][/group]
+    [group group_policy-limit]<h3>Policy Limit *</h3>[text* policy-limit][/group]
+    [group group_mri]<h3>MRI? *</h3><div class="inline-select">[radio mri use_label_element "Yes" "No"]</div>[/group]
+    [group group_mri-instructions]<div><label>Please attach MRI to the <a href="#medical-records">Medical Records</a> upload.</label></div>[/group]
+    [group group_medical-attention]
+        <div class="halves">
+            <div><h3>Surgeries Performed</h3>[text surgeries-performed]</div>
+            <div><h3>Fractures?</h3>[text fractures]</div>
+        </div>
+    [/group]
+    [group group_lost-wages]
+        <div><h3>Lost Wages Claim? *</h3><div class="inline-select">[radio lost-wages use_label_element "Yes" "No"]</div></div>
+        [group group_lost-wages-info][text lost-wages-info]<label>Lost Wages Info</label>[/group]
+        <div><h3>In Suit? *</h3><div class="inline-select">[radio in-suit use_label_element "Yes" "No"]</div></div>
+        [group group_lost-wages-action]
+            <div><h3>Action Name *</h3>[text* lost-wages-action-name]</div>
+            <div><h3>Court Type</h3>[select lost-wages-court-type "Choose One" "Supreme" "Superior" "Circut"]</div>
+            <div><h3>Index Number *</h3>[text* lost-wages-index-number]</div>
+        [/group]
+        [group group_defendant-name]<h3>Defendant's Name *</h3>[text* defendant-name][/group]
+    [/group]
+    [group group_police-report]<h3>Police Report</h3>[mfile police-report filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_scene-photos]<h3>Photos of Scene</h3>[mfile scene-photos filetypes:pdf|doc|docx|jpg|jpeg|png|gif][/group]
+    [group group_medical-records]<h3 id="medical-records">Medical Records</h3>[mfile medical-records filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_er-records]<h3>Initial Visit/ER Records</h3>[mfile er-records filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_insurance-dec-sheet]<h3>Insurance Dec Sheet</h3>[mfile insurance-dec-sheet filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_expert-reports]<h3>Expert Reports</h3>[mfile expert-reports filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_witness-statements]<h3>Witness Statements/Incident Reports</h3>[mfile witness-statements filetypes:pdf|rtf|txt|doc|docx][/group]
+    [group group_other-documents]<h3>Other Documents</h3>[mfile other-documents filetypes:pdf|rtf|txt|doc|docx][/group]
+    [submit "Submit"]
+   </div>

@@ -1,0 +1,538 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    background-color: var(--primary);
+    color: white;
+    font: normal 1rem 'Benton', sans-serif;
+}
+
+a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+h1 {
+    font: 1.66rem 'Benton Thin', sans-serif;
+}
+
+header {
+    background-color: white;
+    display: block;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.nav-container {
+    align-items: end;
+    display: grid;
+    grid-template-areas:
+        "logo toggle"
+        "menu menu";
+    grid-template-columns: 1fr 25px;
+    width: 100%;
+}
+
+header .logo {
+    grid-area: logo;
+    margin-right: 2rem;
+    max-height: 4rem;
+}
+
+header .logo img {
+    max-height: 4rem;
+}
+
+header .menu-icon {
+    grid-area: toggle;
+}
+
+header .main-menu {
+    grid-area: menu;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+.menu-icon .icon,
+.menu-icon .icon:before,
+.menu-icon .icon:after {
+    background-color: black;
+    cursor: pointer;
+    display: block;
+    height: 2px;
+    position: relative;
+    bottom: 8px;
+    width: 25px;
+    transition: top 250ms linear 250ms, bottom 250ms linear 250ms, transform 250ms linear 0s;
+}
+
+.menu-icon .icon:before,
+.menu-icon .icon:after {
+    content: ' ';
+    position: absolute;
+    top: -6px;
+}
+
+.menu-icon .icon:after {
+    bottom: -6px;
+    top: auto;
+}
+
+.navigation-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 500ms cubic-bezier(1, 0, 0, 1) 0s;
+}
+
+.nav-active .navigation-container {
+    max-height: 9999px;
+    transition: all 500ms cubic-bezier(1, 0, 0, 1) 0s;
+}
+
+.navigation-container ul {
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.nav-active .menu-icon .icon {
+    visibility: hidden;
+}
+
+.nav-active .menu-icon .icon:before {
+    top: 0;
+    transform: rotateZ(45deg);
+    transition: top 250ms linear 0s, transform 250ms linear 500ms;
+    visibility: visible;
+}
+
+.nav-active .menu-icon .icon:after {
+    bottom: 0;
+    opacity: 1;
+    transform: rotateZ(-45deg);
+    transition: bottom 250ms linear 0s, transform 250ms linear 500ms;
+    visibility: visible;
+}
+
+.navigation-container ul li a {
+    color: var(--primary);
+    font: bold 1.6rem 'Benton', sans-serif;
+    text-transform: uppercase;
+}
+
+.navigation-container ul ul {
+    margin: 1rem 0 2rem 0;
+}
+
+.navigation-container ul ul li a {
+    display: inline-block;
+    font: normal 1.3rem 'Benton', sans-serif;
+    margin: 0 0 1rem 0;
+}
+
+.navigation-container ul ul li.external a:after {
+    background: transparent url(../images/external-link-black.svg) center center no-repeat;
+    background-size: contain;
+    content: ' ';
+    display: inline-block;
+    height: 0.75rem;
+    margin-left: 0.5rem;
+    opacity: 0.5;
+    width: 0.75rem;
+}
+
+#menu-main-menu > li {
+    display: block;
+    margin-top: 2rem;
+}
+
+main,
+.page-width {
+    display: block;
+    margin: 2rem auto;
+    max-width: 1080px;
+    position: relative;
+    width: calc( 100% - 4rem );
+    z-index: 0;
+}
+
+.homepage-links {
+    margin-top: 2rem;
+}
+
+.homepage-links h2 {
+    font: bold 1rem 'Benton', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.homepage-links ul {
+    display: block;
+    list-style-type: none;
+}
+
+.homepage-links ul li a {
+    color: var(--light);
+    display: inline-block;
+    font: normal 1.3rem 'Benton', sans-serif;
+    text-transform: uppercase;
+}
+
+.homepage-links ul li {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact-button {
+    background-color: var(--medium);
+    color: var(--primary);
+    display: block;
+    margin: 2rem auto;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font: bold 1rem 'Benton', sans-serif;
+}
+
+.page-content h1 {
+    font: normal 1.8rem/125% 'Benton Thin', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.page-content .sans-serif {
+    font-family: 'Benton';
+}
+
+.value-statements ul {
+    color: var(--medium);
+    list-style-type: none;
+    margin-bottom: 3rem;
+}
+
+.value-statements h2 {
+    color: var(--light);
+}
+
+.value-statements li,
+.value-statements h2 {
+    font: bold 1rem/125% 'Benton', sans-serif;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.post-content {
+    font: normal 1rem/150% 'Elena', serif;
+}
+
+.post-content h2 {
+    font: bold 1.25rem 'Benton', sans-serif;
+    margin: 2rem 0 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.post-content h3 {
+    color: var(--light);
+    font: bold 1.25rem 'Benton', sans-serif;
+    margin: 2rem 0 0.5rem 0;
+    text-transform: none;
+}
+
+.post-content .team-bios h3 {
+    font: normal 1.25rem 'Benton Thin', sans-serif;
+    margin-top: 0;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+.post-content ul,
+.post-content ol {
+    padding: 0 0 0 1.25rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    display: block;
+    margin: 4rem auto;
+    text-align: left;
+}
+
+.copyright {
+    color: white;
+    font: normal 1rem 'Benton', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.copyright div {
+    margin-bottom: 0.5rem;
+}
+
+.copyright-symbol {
+    font-family: "Helvetica", sans-serif;
+}
+
+.credit {
+    color: var(--light);
+    font: normal 0.85rem 'Benton', sans-serif;
+}
+
+.asw .wp-block-buttons .wp-block-button {
+    color: var(--primary);
+    margin: 0;
+}
+
+.asw a.wp-block-button__link {
+    background-color: var(--medium);
+    color: var(--primary);
+    font: normal 1rem 'Benton', sans-serif;
+    text-transform: uppercase;
+}
+
+.asw a.wp-block-button__link:hover {
+    background-color: white;
+    color: black;
+}
+
+.contact-form .field {
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--medium);
+    border: 1px solid transparent;
+    border-radius: 0;
+    color: white;
+    display: block;
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+    font: normal 1rem 'Elena';
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid var(--light);
+}
+
+.contact-form input[type=submit] {
+    align-items: center;
+    background-color: var(--dark);
+    cursor: pointer;
+    display: table;
+    float: right;
+    font: normal 1rem 'Benton', sans-serif;
+    padding: 0.75rem 2rem 0.5rem 2rem;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.contact-form input[type=submit]:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.asw div.wpcf7-mail-sent-ok {
+    border: 0;
+    margin: 3rem 0;
+    padding: 0;
+    font: normal 2rem 'Benton Thin';
+    max-width: 640px;
+}
+
+.homepage-ctas a {
+    background-color: var(--light);
+    color: black;
+    display: block;
+    font: Normal 1rem 'Benton';
+    margin: 0 auto 2rem auto;
+    max-width: 20rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.homepage-ctas a:nth-of-type(even) {
+    background-color: var(--medium);
+    color: white;
+}
+
+.homepage-ctas a:hover {
+    background-color: white;
+    color: black;
+}
+
+.nmls-badge img {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+.form h3 {
+    color: var(--medium);
+}
+
+.form h3:target {
+    color: white;
+}
+
+.form input,
+.form select,
+.form textarea {
+    background-color: var(--medium);
+    border: 1px solid var(--medium);
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    padding: 1rem;
+    font: normal 1rem 'Benton', sans-serif;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+.form select {
+    background-image: url(../images/select-arrow.svg);
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    cursor: pointer;
+}
+
+.form input:focus, .form select:focus, .form textarea:focus  {
+    border: 1px solid white;
+    outline: 0;
+}
+
+.contact-form label,
+.form label {
+    display: block;
+    font: normal 0.85rem 'Benton', sans-serif;
+    margin: 0.5rem 0 1rem 0;
+    text-transform: uppercase;
+}
+
+.wpcf7-radio input {
+    display: none;
+}
+
+.wpcf7-radio {
+    display: flex;
+    padding-top: 0;
+}
+
+.wpcf7-list-item-label {
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.wpcf7-list-item-label:before {
+    content: ' ';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--medium);
+    border: 4px solid var(--medium);
+    box-sizing: border-box;
+    margin-right: 0.5rem;
+}
+
+input:checked ~ .wpcf7-list-item-label:before {
+    background-color: var(--primary)
+}
+
+span.wpcf7-list-item {
+    margin: 0 1rem 0 0;
+}
+
+.wpcf7-radio span.wpcf7-list-item {
+    margin: 0;
+}
+
+.stacked-select .wpcf7-radio .wpcf7-list-item {
+    display: block;
+}
+
+.stacked-select .wpcf7-radio {
+    display: block;
+}
+
+.form .stacked-select label {
+    padding-bottom: 0;
+}
+
+
+.asw .codedropz-upload-handler {
+    border: 1px dashed var(--medium);
+    border-radius: 0;
+}
+
+.asw .codedropz-upload-container {
+    background-color: var(--dark);
+}
+
+.asw .codedropz-upload-inner h3 {
+    font: normal 0.85rem 'Benton Thin', sans-serif;
+    color: white;
+}
+
+.asw .codedropz-upload-inner span {
+    display: none;
+}
+
+.asw .codedropz-btn-wrap a {
+    background-color: var(--medium);
+    color: white;
+    display: table;
+    margin: 0 auto;
+    padding: 0.5rem;
+    font: normal 0.85rem 'Benton Thin';
+}
+
+.asw.trial-school a.wp-block-button__link {
+    padding-top: 1rem;
+}
+
+.trial-school .wp-block-button {
+    float: right;
+}
+
+.trial-school-badge img {
+    margin-top: 30px;
+    max-width: 200px;
+}
+
+.partner-logos {
+    max-width: 25rem;
+}
+
+@media screen and ( min-width: 782px ) and ( max-width: 900px ) {
+    .asw .wp-block-columns.team-bios {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .asw .wp-block-columns.team-bios .wp-block-column {
+        flex-basis: calc( 50% - 1rem );
+        flex-grow: unset;
+    }
+
+    .asw .wp-block-columns.team-bios .wp-block-column:not(:first-child) {
+        margin-left: 0;
+    }
+}
